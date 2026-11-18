@@ -1,6 +1,24 @@
 # Ondura website
 
-Source of [ondura.mirranet.de](https://ondura.mirranet.de), the product page of the [Ondura](https://github.com/Ondura-Suite/Ondura-Core) office suite. Plain HTML, CSS and a little JavaScript – no build step, no external requests from the visitor's browser.
+Source of [ondura.mirranet.de](https://ondura.mirranet.de), the product page of the [Ondura](https://github.com/Ondura-Suite/Ondura-Core) office suite. Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser.
+
+## Languages
+
+English is the default and lives at the root (`/`), German under `/de/`. Both are rendered from the same templates in `src/pages/`, where each text holds both languages side by side:
+
+```html
+<h2>{{de}}Herunterladen{{en}}Download{{/}}</h2>
+```
+
+[`scripts/build.py`](scripts/build.py) (Python standard library only) renders `src/` into `site/`. The supported placeholders are documented at the top of the script.
+
+Which language a visitor gets:
+
+1. An explicit choice from the DE/EN switcher in the header wins. It is kept in `localStorage` (`ondura-lang`), nothing else is stored.
+2. Otherwise the browser's preferred language decides: German (`de-*`) gets `/de/`, everything else gets English.
+3. German pages never redirect a visitor who hasn't chosen, so shared `/de/` links stay German.
+
+All pages carry `hreflang` alternates for search engines.
 
 ## How it stays in sync
 
@@ -12,7 +30,7 @@ Screenshots, app icons and release information are **not** stored in this reposi
 | App icons | `apps/ondura/public/{ondura,mail,text,sheets,slides}.svg` | `site/assets/brand/` |
 | Latest release (version, date, download links) | GitHub Releases API | `site/release.json` |
 
-The workflow [`deploy.yml`](.github/workflows/deploy.yml) runs [`scripts/sync-core.sh`](scripts/sync-core.sh) and publishes `site/` to GitHub Pages:
+The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs [`scripts/sync-core.sh`](scripts/sync-core.sh) and publishes `site/` to GitHub Pages:
 
 - on every push to `main`,
 - every three hours (picks up new releases and screenshots automatically),
@@ -51,6 +69,7 @@ The three-hourly schedule is enough for most cases. To update the site the momen
 
 ```sh
 git clone --depth 1 https://github.com/Ondura-Suite/Ondura-Core.git .core
+python3 scripts/build.py
 scripts/sync-core.sh .core site      # needs curl and jq
 python3 -m http.server -d site 8080
 ```
@@ -58,16 +77,18 @@ python3 -m http.server -d site 8080
 ## Layout
 
 ```
-site/
-  index.html          product page
-  impressum.html      legal notice
-  datenschutz.html    privacy policy
-  404.html
-  CNAME               ondura.mirranet.de
-  assets/css/site.css
-  assets/js/site.js   screenshot tour, release links from release.json
-  assets/fonts/       Instrument Sans (SIL OFL 1.1, self-hosted)
-scripts/sync-core.sh  pulls screenshots, icons and release info from Ondura-Core
+src/
+  pages/              index, legal (Impressum), privacy (Datenschutz) – both languages
+  partials/           head (language detection), header (with DE/EN switch), footer
+  static/             copied as-is: CSS, JS, fonts (Instrument Sans, SIL OFL 1.1), 404, CNAME
+scripts/
+  build.py            renders src/ into site/ (en at /, de at /de/)
+  sync-core.sh        adds screenshots, icons and release.json from Ondura-Core
+site/                 build output, not committed
 ```
 
-The page text is German because the app's user interface is German.
+| Page | English | German |
+| --- | --- | --- |
+| Home | `/` | `/de/` |
+| Legal notice | `/legal-notice.html` | `/de/impressum.html` |
+| Privacy | `/privacy.html` | `/de/datenschutz.html` |

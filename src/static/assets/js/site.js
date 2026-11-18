@@ -6,6 +6,36 @@
   "use strict";
 
   const RELEASES_URL = "https://github.com/Ondura-Suite/Ondura-Core/releases";
+  const LANG = document.documentElement.lang === "de" ? "de" : "en";
+  const BASE = document.documentElement.dataset.base || "";
+
+  const STRINGS = {
+    de: {
+      inOndura: (name) => `${name} in Ondura`,
+      noRelease: `Es ist noch keine Version veröffentlicht. Neue Versionen erscheinen auf der <a href="${RELEASES_URL}">Release-Seite</a>.`,
+      version: (v, date) => `Version ${v}${date ? ` vom ${date}` : ""}`,
+      downloadVersion: (v) => `Version ${v} herunterladen`,
+      locale: "de-DE",
+    },
+    en: {
+      inOndura: (name) => `${name} in Ondura`,
+      noRelease: `No version has been released yet. New versions appear on the <a href="${RELEASES_URL}">releases page</a>.`,
+      version: (v, date) => `Version ${v}${date ? `, released ${date}` : ""}`,
+      downloadVersion: (v) => `Download version ${v}`,
+      locale: "en-GB",
+    },
+  };
+  const T = STRINGS[LANG];
+
+  // ---------- Language switcher ----------
+  // Remember an explicit choice so the automatic detection in <head>
+  // doesn't send the visitor back.
+  document.querySelectorAll("[data-set-lang]").forEach((link) => {
+    link.addEventListener("click", () => {
+      try { localStorage.setItem("ondura-lang", link.dataset.setLang); } catch (_) { /* private mode */ }
+      if (location.hash) link.href = link.href.split("#")[0] + location.hash;
+    });
+  });
 
   // ---------- Screenshot tour ----------
   function initTour(root) {
@@ -17,7 +47,7 @@
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Warm the cache so switching feels instant.
-    const warm = () => tabs.forEach((t) => { new Image().src = `assets/screens/${t.dataset.shot}.png`; });
+    const warm = () => tabs.forEach((t) => { new Image().src = `${BASE}assets/screens/${t.dataset.shot}.png`; });
     if ("requestIdleCallback" in window) requestIdleCallback(warm); else setTimeout(warm, 1500);
 
     function select(tab, focus) {
@@ -29,8 +59,8 @@
       if (focus) tab.focus();
       tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
 
-      const src = `assets/screens/${tab.dataset.shot}.png`;
-      const alt = `${tab.textContent.trim()} in Ondura`;
+      const src = `${BASE}assets/screens/${tab.dataset.shot}.png`;
+      const alt = T.inOndura(tab.textContent.trim());
       const apply = () => {
         img.src = src;
         img.alt = alt;
@@ -76,35 +106,35 @@
 
   function formatDate(iso) {
     try {
-      return new Date(iso).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" });
+      return new Date(iso).toLocaleDateString(T.locale, { day: "numeric", month: "long", year: "numeric" });
     } catch (_) { return ""; }
   }
 
   function formatSize(bytes) {
     if (!bytes) return "";
-    return `${(bytes / 1048576).toLocaleString("de-DE", { maximumFractionDigits: 0 })} MB`;
+    return `${(bytes / 1048576).toLocaleString(T.locale, { maximumFractionDigits: 0 })} MB`;
   }
 
   async function initRelease() {
     const status = document.querySelector("[data-release-status]");
+    if (!status && !document.querySelector("[data-asset], [data-version-label]")) return;
     let release = null;
     try {
-      const res = await fetch("release.json", { cache: "no-cache" });
+      const res = await fetch(`${BASE}release.json`, { cache: "no-cache" });
       if (res.ok) release = await res.json();
     } catch (_) { /* keep the static fallback links */ }
 
     if (!release || !release.tag) {
-      if (status) status.innerHTML = `Es ist noch keine Version veröffentlicht. Neue Versionen erscheinen auf der <a href="${RELEASES_URL}">Release-Seite</a>.`;
+      if (status) status.innerHTML = T.noRelease;
       return;
     }
 
     const version = release.tag.replace(/^v/i, "");
     if (status) {
-      const date = release.published_at ? ` vom ${formatDate(release.published_at)}` : "";
-      status.textContent = `Version ${version}${date}`;
+      status.textContent = T.version(version, release.published_at ? formatDate(release.published_at) : "");
     }
     document.querySelectorAll("[data-version-label]").forEach((el) => {
-      el.textContent = `Version ${version} herunterladen`;
+      el.textContent = T.downloadVersion(version);
     });
 
     const assets = Array.isArray(release.assets) ? release.assets : [];

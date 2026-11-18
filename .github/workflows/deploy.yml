@@ -36,6 +36,9 @@ jobs:
             docs/screenshots
             apps/ondura/public
 
+      - name: Build pages (English and German)
+        run: python3 scripts/build.py site
+
       - name: Sync screenshots, icons and release info
         env:
           GITHUB_TOKEN: ${{ github.token }}

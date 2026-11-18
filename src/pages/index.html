@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="{{lang}}" data-base="{{base}}">
+<head>
+  <title>{{de}}Ondura – Office-Suite für Windows und Linux{{en}}Ondura – Office suite for Windows and Linux{{/}}</title>
+  <meta name="description" content="{{de}}Ondura ist eine Office-Suite für Windows und Linux: E-Mail mit Kalender, Kontakten und Aufgaben, Text, Tabellen und Präsentation. Funktioniert mit Microsoft 365, Exchange und IMAP.{{en}}Ondura is an office suite for Windows and Linux: e-mail with calendar, contacts and tasks, word processing, spreadsheets and presentations. Works with Microsoft 365, Exchange and IMAP.{{/}}">
+  <meta property="og:title" content="{{de}}Ondura – Office-Suite für Windows und Linux{{en}}Ondura – Office suite for Windows and Linux{{/}}">
+  <meta property="og:description" content="{{de}}E-Mail, Kalender, Kontakte, Aufgaben, Text, Tabellen und Präsentation – mit Microsoft 365, Exchange und IMAP.{{en}}E-mail, calendar, contacts, tasks, documents, spreadsheets and presentations – with Microsoft 365, Exchange and IMAP.{{/}}">
+  <meta property="og:image" content="https://ondura.mirranet.de/assets/screens/mail-light.png">
+  <meta property="og:url" content="{{url:{{lang}}}}">
+  <link rel="canonical" href="{{url:{{lang}}}}">
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+  <main id="inhalt">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__text">
+          <h1>{{de}}Die Office-Suite für Windows und&nbsp;Linux.{{en}}The office suite for Windows and&nbsp;Linux.{{/}}</h1>
+          <p class="hero__lede">{{de}}E-Mail mit Kalender, Kontakten und Aufgaben, dazu Text, Tabellen und Präsentation. Ondura sieht aus und arbeitet wie Microsoft&nbsp;365, öffnet Office- und LibreOffice-Dateien direkt und funktioniert mit Microsoft&nbsp;365, Exchange und jedem IMAP-Server.{{en}}E-mail with calendar, contacts and tasks, plus a word processor, spreadsheets and presentations. Ondura looks and works like Microsoft&nbsp;365, opens Microsoft Office and LibreOffice files directly and works with Microsoft&nbsp;365, Exchange and any IMAP server.{{/}}</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#download" data-version-label>{{de}}Ondura herunterladen{{en}}Download Ondura{{/}}</a>
+            <a class="btn btn--ghost" href="https://github.com/Ondura-Suite/Ondura-Core">{{de}}Quellcode auf GitHub{{en}}Source code on GitHub{{/}}</a>
+          </div>
+        </div>
+
+        <div class="tour" data-tour>
+          <div class="tour__bar">
+            <div class="tour__tabs" role="tablist" aria-label="{{de}}Ondura ansehen{{en}}Take a look at Ondura{{/}}">
+              <button role="tab" aria-selected="true" data-shot="mail-light" data-caption="{{de}}Alle Konten in einem Fenster, mit Ordnern, Unterhaltungen und Volltextsuche.{{en}}All your accounts in one window, with folders, conversations and full-text search.{{/}}">
+                <img src="{{base}}assets/brand/mail.svg" alt="" width="20" height="20">{{de}}E-Mail{{en}}Mail{{/}}
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="calendar" data-caption="{{de}}Tag, Arbeitswoche, Woche und Monat – mit Besprechungsanfragen und Terminplanungs-Assistent.{{en}}Day, work week, week and month – with meeting invitations and a scheduling assistant.{{/}}">
+                <img src="{{base}}assets/brand/mail.svg" alt="" width="20" height="20">{{de}}Kalender{{en}}Calendar{{/}}
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="contacts" data-caption="{{de}}Adressbücher mit Gruppen und Fotos, vCard-Import und -Export.{{en}}Address books with groups and photos, vCard import and export.{{/}}">
+                <img src="{{base}}assets/brand/mail.svg" alt="" width="20" height="20">{{de}}Kontakte{{en}}Contacts{{/}}
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="tasks" data-caption="{{de}}Aufgabenlisten wie in Microsoft To Do, mit Unteraufgaben und Erinnerungen.{{en}}Task lists like Microsoft To Do, with subtasks and reminders.{{/}}">
+                <img src="{{base}}assets/brand/mail.svg" alt="" width="20" height="20">{{de}}Aufgaben{{en}}Tasks{{/}}
+              </button>
+              <span class="tour__sep" aria-hidden="true"></span>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="text" data-caption="{{de}}Ondura Text: Seitenansicht wie in Word, für .docx und .odt.{{en}}Ondura Text: a page view like Word, for .docx and .odt.{{/}}">
+                <img src="{{base}}assets/brand/text.svg" alt="" width="20" height="20">Text
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="sheets" data-caption="{{de}}Ondura Tabellen: rund 180 Funktionen, Diagramme und Pivot-Tabellen, für .xlsx und .ods.{{en}}Ondura Tabellen: around 180 functions, charts and pivot tables, for .xlsx and .ods.{{/}}">
+                <img src="{{base}}assets/brand/sheets.svg" alt="" width="20" height="20">Tabellen
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="slides" data-caption="{{de}}Ondura Präsentation: Folienmaster, Animationen und Morph, für .pptx und .odp.{{en}}Ondura Präsentation: slide master, animations and Morph, for .pptx and .odp.{{/}}">
+                <img src="{{base}}assets/brand/slides.svg" alt="" width="20" height="20">Präsentation
+              </button>
+            </div>
+          </div>
+          <figure class="tour__stage" role="tabpanel" aria-live="polite">
+            <img class="tour__img" src="{{base}}assets/screens/mail-light.png" width="1440" height="900" alt="{{de}}Ondura Mail mit Posteingang, Nachrichtenliste und geöffneter Nachricht{{en}}Ondura Mail with inbox, message list and an open message{{/}}" fetchpriority="high">
+            <figcaption class="tour__caption">{{de}}Alle Konten in einem Fenster, mit Ordnern, Unterhaltungen und Volltextsuche.{{en}}All your accounts in one window, with folders, conversations and full-text search.{{/}}</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="mail" class="section">
+      <div class="wrap split">
+        <div class="split__head">
+          <img class="app-icon" src="{{base}}assets/brand/mail.svg" alt="" width="56" height="56">
+          <h2>Ondura Mail</h2>
+          <p>{{de}}E-Mail, Kalender, Kontakte und Aufgaben in einem Fenster – wie in Outlook. Sie wechseln über die Seitenleiste, ohne eine zweite App zu öffnen.{{en}}E-mail, calendar, contacts and tasks in one window – like Outlook. You switch between them in the sidebar, without opening a second app.{{/}}</p>
+        </div>
+        <div class="split__body">
+          <div class="feature">
+            <h3>{{de}}E-Mail{{en}}E-mail{{/}}</h3>
+            <ul>
+{{de}}
+              <li>Funktioniert offline: Was Sie tun, gilt sofort und wird an den Server übertragen, sobald er erreichbar ist.</li>
+              <li>Neue Nachrichten kommen innerhalb von Sekunden an und erscheinen als Desktop-Benachrichtigung.</li>
+              <li>Regeln, Kategorien, Kennzeichnungen, Signaturen, verzögertes Senden. Große Anhänge werden bei Microsoft&nbsp;365 über OneDrive geteilt.</li>
+              <li>Automatische Antworten werden auf dem Server gespeichert und laufen auch, wenn Ihr PC aus ist.</li>
+              <li>Freigegebene Postfächer aus Microsoft&nbsp;365 und Exchange als eigenes Konto.</li>
+              <li>S/MIME: Nachrichten signieren und verschlüsseln, Signaturen prüfen.</li>
+              <li>HTML-Mails führen nie Skripte aus, externe Bilder (Tracking-Pixel) bleiben blockiert, bis Sie sie erlauben.</li>
+{{en}}
+              <li>Works offline: whatever you do applies at once and is sent to the server as soon as it can be reached.</li>
+              <li>New mail arrives within seconds and shows up as a desktop notification.</li>
+              <li>Rules, categories, flags, signatures and delayed sending. Large attachments are shared through OneDrive on Microsoft&nbsp;365.</li>
+              <li>Automatic replies are stored on the server and keep working while your PC is off.</li>
+              <li>Shared mailboxes from Microsoft&nbsp;365 and Exchange appear as their own account.</li>
+              <li>S/MIME: sign and encrypt messages, check signatures.</li>
+              <li>HTML mail never runs scripts, and remote images (tracking pixels) stay blocked until you allow them.</li>
+{{/}}
+            </ul>
+          </div>
+          <div class="feature">
+            <h3>{{de}}Kalender{{en}}Calendar{{/}}</h3>
+            <p>{{de}}Tag, Arbeitswoche, Woche und Monat; Serientermine und Erinnerungen; Besprechungsanfragen senden, annehmen und ablehnen; Terminplanungs-Assistent mit Frei/Gebucht-Zeiten, Raumsuche, Drag&nbsp;&amp;&nbsp;Drop.{{en}}Day, work week, week and month views; recurring events and reminders; send, accept and decline meeting invitations; scheduling assistant with free/busy times, room finder, drag&nbsp;&amp;&nbsp;drop.{{/}}</p>
+          </div>
+          <div class="feature">
+            <h3>{{de}}Kontakte{{en}}Contacts{{/}}</h3>
+            <p>{{de}}Adressbücher mit Gruppen und Fotos, vCard-Import und -Export, Adressvervollständigung beim Schreiben.{{en}}Address books with groups and photos, vCard import and export, address completion while you type.{{/}}</p>
+          </div>
+          <div class="feature">
+            <h3>{{de}}Aufgaben{{en}}Tasks{{/}}</h3>
+            <p>{{de}}Aufgabenlisten im Stil von Microsoft To Do, mit Unteraufgaben, Fälligkeitsdaten, wiederkehrenden Aufgaben und Erinnerungen.{{en}}Task lists in the style of Microsoft To Do, with subtasks, due dates, recurring tasks and reminders.{{/}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="wrap pair">
+        <figure>
+          <img src="{{base}}assets/screens/mail-security.png" width="1440" height="900" loading="lazy" alt="{{de}}Signierte Nachricht und aktive Abwesenheitsnotiz in Ondura Mail{{en}}A signed message and active automatic replies in Ondura Mail{{/}}">
+          <figcaption>{{de}}Signierte Nachricht und automatische Antworten{{en}}Signed mail and automatic replies{{/}}</figcaption>
+        </figure>
+        <figure>
+          <img src="{{base}}assets/screens/mail-dark.png" width="1440" height="900" loading="lazy" alt="{{de}}Ondura Mail im dunklen Design{{en}}Ondura Mail in dark mode{{/}}">
+          <figcaption>{{de}}Dunkles Design{{en}}Dark mode{{/}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="office" class="section section--mist">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Text, Tabellen, Präsentation{{en}}Documents, spreadsheets, presentations{{/}}</h2>
+        <p class="section__intro">{{de}}Dateien werden in ihrem eigenen Format geöffnet und gespeichert – ohne Umwandlung. Was Ondura in einer Datei nicht anzeigen kann, steht unter <em>Datei&nbsp;›&nbsp;Informationen</em>.{{en}}Files are opened and saved in their own format – no conversion. Anything in a file that Ondura can't show is listed under <em>Datei&nbsp;›&nbsp;Informationen</em> (File › Info).{{/}}</p>
+
+        <div class="apps">
+          <article class="app app--text">
+            <img class="app-icon" src="{{base}}assets/brand/text.svg" alt="" width="48" height="48">
+            <h3>Ondura Text</h3>
+            <p class="formats"><span>.docx</span><span>.odt</span></p>
+            <p>{{de}}Seitenansicht wie in Word, Formatvorlagen, Kopf- und Fußzeilen, Abschnitte, Tabellen, Kommentare und Änderungsverfolgung, Fuß- und Endnoten, Inhaltsverzeichnis, Literaturverzeichnis, Serienbriefe und Rechtschreibprüfung für Deutsch und Englisch.{{en}}The word processor: page view like Word, styles, headers and footers, sections, tables, comments and tracked changes, footnotes and endnotes, table of contents, bibliography, mail merge and spell checking for German and English.{{/}}</p>
+          </article>
+          <article class="app app--sheets">
+            <img class="app-icon" src="{{base}}assets/brand/sheets.svg" alt="" width="48" height="48">
+            <h3>Ondura Tabellen</h3>
+            <p class="formats"><span>.xlsx</span><span>.ods</span></p>
+            <p>{{de}}Rund 180 Funktionen mit dynamischen Arrays, Excel-Tabellen, Diagramme, Pivot-Tabellen, Sparklines, bedingte Formatierung, Datenüberprüfung, Filter, Was-wäre-wenn-Analyse und Solver.{{en}}The spreadsheet app: around 180 functions including dynamic arrays, Excel tables, charts, pivot tables, sparklines, conditional formatting, data validation, filters, what-if analysis and solver.{{/}}</p>
+          </article>
+          <article class="app app--slides">
+            <img class="app-icon" src="{{base}}assets/brand/slides.svg" alt="" width="48" height="48">
+            <h3>Ondura Präsentation</h3>
+            <p class="formats"><span>.pptx</span><span>.odp</span></p>
+            <p>{{de}}Folienmaster, Tabellen, Diagramme, bearbeitbare SmartArt, Audio und Video, Animationen und Übergänge inklusive Morph, Referentenansicht, Stift und Laserpointer, Export als Video.{{en}}The presentation app: slide master, tables, charts, editable SmartArt, audio and video, animations and transitions including Morph, presenter view, pen and laser pointer, export as video.{{/}}</p>
+          </article>
+        </div>
+
+        <div class="common">
+          <h3>{{de}}In allen drei Apps{{en}}In all three apps{{/}}</h3>
+          <dl>
+            <div><dt>{{de}}PDF-Export{{en}}PDF export{{/}}</dt><dd><em>Datei&nbsp;›&nbsp;Als PDF exportieren</em>{{de}}{{en}} (File › Export as PDF){{/}}</dd></div>
+            <div><dt>{{de}}Barrierefreiheit prüfen{{en}}Accessibility checker{{/}}</dt><dd>{{de}}Findet fehlende Alternativtexte, Tabellen ohne Kopfzeile oder übersprungene Überschriftenebenen und behebt vieles mit einem Klick.{{en}}Finds missing alternative text, tables without header rows and skipped heading levels, and fixes many of them with one click.{{/}}</dd></div>
+            <div><dt>{{de}}Makros{{en}}Macros{{/}}</dt><dd>{{de}}Kleine Skripte für wiederkehrende Arbeit; Tabellen zeichnet sie für Sie auf. Makros werden nie in Dokumenten gespeichert – das Öffnen einer Datei kann keinen Code ausführen.{{en}}Small scripts for recurring work; Tabellen can record them for you. Macros are never stored in documents, so opening a file can't run code.{{/}}</dd></div>
+          </dl>
+        </div>
+
+        <div class="pair">
+          <figure>
+            <img src="{{base}}assets/screens/accessibility.png" width="1440" height="900" loading="lazy" alt="{{de}}Barrierefreiheitsprüfung in Ondura{{en}}Accessibility checker in Ondura{{/}}">
+            <figcaption>{{de}}Barrierefreiheit überprüfen{{en}}Accessibility checker{{/}}</figcaption>
+          </figure>
+          <figure>
+            <img src="{{base}}assets/screens/macros.png" width="1440" height="900" loading="lazy" alt="{{de}}Makro-Editor in Ondura Tabellen{{en}}Macro editor in Ondura Tabellen{{/}}">
+            <figcaption>{{de}}Makros in Tabellen{{en}}Macros in Tabellen{{/}}</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="konten" class="section">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Mit Ihren Konten{{en}}Works with your accounts{{/}}</h2>
+        <p class="section__intro">{{de}}Microsoft&nbsp;365 melden Sie einfach im Browser an – eine eigene App-Registrierung ist nicht nötig. Kalender, Kontakte und Aufgaben funktionieren auch ganz ohne Konto, nur auf Ihrem Computer.{{en}}Sign in to Microsoft&nbsp;365 in your browser – there's no app to register yourself. Calendars, contacts and tasks also work without any account, on your computer only.{{/}}</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="{{de}}Unterstützte Konten{{en}}Supported accounts{{/}}">
+          <table class="accounts">
+            <thead>
+              <tr><th scope="col">{{de}}Konto{{en}}Account{{/}}</th><th scope="col">{{de}}E-Mail{{en}}E-mail{{/}}</th><th scope="col">{{de}}Kalender{{en}}Calendar{{/}}</th><th scope="col">{{de}}Kontakte{{en}}Contacts{{/}}</th><th scope="col">{{de}}Aufgaben{{en}}Tasks{{/}}</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Microsoft 365, Exchange Online, Outlook.com</th><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja, Microsoft To Do{{en}}Yes, Microsoft To Do{{/}}</td></tr>
+              <tr><th scope="row">{{de}}Exchange Server 2013 SP1 und neuer{{en}}Exchange Server 2013 SP1 and newer{{/}}</th><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="n">–</td></tr>
+              <tr><th scope="row">{{de}}IMAP / SMTP (jeder Anbieter){{en}}IMAP / SMTP (any provider){{/}}</th><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="n">–</td><td class="n">–</td><td class="n">–</td></tr>
+              <tr><th scope="row">CalDAV / CardDAV</th><td class="n">–</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td></tr>
+              <tr><th scope="row">{{de}}Auf diesem Computer{{en}}On this computer{{/}}</th><td class="n">–</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td><td class="y">{{de}}Ja{{en}}Yes{{/}}</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="data-note">
+          <h3>{{de}}Ihre Daten bleiben bei Ihnen{{en}}Your data stays with you{{/}}</h3>
+          <p>{{de}}Ondura hält eine Kopie Ihrer Mails, Kalender und Kontakte auf Ihrem Computer, damit alles schnell ist und offline funktioniert. Passwörter liegen in der Anmeldeinformationsverwaltung Ihres Systems (Windows, GNOME Keyring oder KWallet), nie in einfachen Dateien. Ondura sendet Daten nur an Ihre eigenen Mail- und Kalenderserver und fragt bei GitHub nach Updates.{{en}}Ondura keeps a copy of your mail, calendars and contacts on your computer so it is fast and works offline. Passwords and sign-ins are kept in your system's credential store (Windows Credential Manager, GNOME Keyring or KWallet), never in plain files. Ondura sends data only to your own mail and calendar servers, and checks GitHub for updates.{{/}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section section--ink">
+      <div class="wrap download">
+        <div class="download__head">
+          <h2>{{de}}Herunterladen{{en}}Download{{/}}</h2>
+          <p class="download__version" data-release-status>{{de}}Die aktuelle Version finden Sie auf der Release-Seite.{{en}}You'll find the current version on the releases page.{{/}}</p>
+          <ul class="downloads">
+            <li>
+              <span class="downloads__os">Windows 10 {{de}}und{{en}}and{{/}} 11 <small>{{de}}64-Bit{{en}}64-bit{{/}}</small></span>
+              <a class="btn btn--light" data-asset="win" href="https://github.com/Ondura-Suite/Ondura-Core/releases/latest">{{de}}Setup herunterladen{{en}}Download setup{{/}}</a>
+            </li>
+            <li>
+              <span class="downloads__os">Debian, Ubuntu, Linux Mint <small>.deb</small></span>
+              <a class="btn btn--light" data-asset="deb" href="https://github.com/Ondura-Suite/Ondura-Core/releases/latest">{{de}}.deb herunterladen{{en}}Download .deb{{/}}</a>
+            </li>
+            <li>
+              <span class="downloads__os">Fedora, openSUSE, RHEL <small>.rpm</small></span>
+              <a class="btn btn--light" data-asset="rpm" href="https://github.com/Ondura-Suite/Ondura-Core/releases/latest">{{de}}.rpm herunterladen{{en}}Download .rpm{{/}}</a>
+            </li>
+            <li>
+              <span class="downloads__os">{{de}}Andere Linux-Distributionen{{en}}Other Linux distributions{{/}} <small>.AppImage</small></span>
+              <a class="btn btn--light" data-asset="appimage" href="https://github.com/Ondura-Suite/Ondura-Core/releases/latest">{{de}}AppImage herunterladen{{en}}Download AppImage{{/}}</a>
+            </li>
+          </ul>
+          <p class="download__more"><a href="https://github.com/Ondura-Suite/Ondura-Core/releases">{{de}}Alle Versionen auf GitHub{{en}}All versions on GitHub{{/}}</a></p>
+        </div>
+        <div class="download__setup">
+          <img src="{{base}}assets/screens/setup.png" width="640" height="520" loading="lazy" alt="{{de}}Ondura-Setup mit Auswahl zwischen Ondura Mail und den Office-Apps{{en}}Ondura setup with a choice between Ondura Mail and the office apps{{/}}">
+          <p>{{de}}Das Setup fragt, was Sie installieren möchten: <strong>Ondura Mail</strong> allein, die <strong>Office-Apps</strong> (Text, Tabellen und Präsentation gemeinsam) oder beides. Ondura wird für alle Benutzer des PCs installiert und hält sich selbst aktuell – gibt es eine neue Version, erscheint in der Titelleiste die Schaltfläche <em>Update</em>.{{en}}The setup asks what to install: <strong>Ondura Mail</strong> on its own, the <strong>office apps</strong> (Text, Tabellen and Präsentation together) or both. Ondura is installed for all users of the PC and keeps itself up to date – when a new version is available, an <em>Update</em> button appears in the title bar.{{/}}</p>
+          {{de}}{{en}}<p class="download__lang">Ondura's user interface is in German.</p>{{/}}
+        </div>
+      </div>
+    </section>
+
+    <section id="start" class="section">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}So legen Sie los{{en}}Getting started{{/}}</h2>
+        <ol class="steps">
+          <li>
+            <h3>{{de}}Ondura Mail öffnen{{en}}Open Ondura Mail{{/}}</h3>
+            <p>{{de}}Wählen Sie <em>Konto hinzufügen</em>.{{en}}Choose <em>Konto hinzufügen</em> (Add account).{{/}}</p>
+          </li>
+          <li>
+            <h3>{{de}}Kontotyp wählen{{en}}Pick your account type{{/}}</h3>
+            <p>{{de}}<strong>Microsoft&nbsp;365 / Outlook.com:</strong> im Browser mit Microsoft anmelden. <strong>Exchange Server:</strong> E-Mail-Adresse, Passwort und EWS-Adresse. <strong>IMAP</strong> (z.&nbsp;B. GMX, Web.de, Gmail): E-Mail-Adresse, Passwort und Servernamen. <strong>CalDAV / CardDAV</strong> (Nextcloud, mailbox.org, iCloud …): die Serveradresse genügt.{{en}}<strong>Microsoft&nbsp;365 / Outlook.com:</strong> sign in with Microsoft in your browser. <strong>Exchange Server:</strong> e-mail address, password and EWS address. <strong>IMAP</strong> (e.g. Gmail, GMX, your own server): e-mail address, password and server names. <strong>CalDAV / CardDAV</strong> (Nextcloud, mailbox.org, iCloud …): the server address is enough.{{/}}</p>
+          </li>
+          <li>
+            <h3>{{de}}Fertig{{en}}Done{{/}}</h3>
+            <p>{{de}}Mails, Kalender, Kontakte und Aufgaben des Kontos erscheinen automatisch.{{en}}The account's mail, calendars, contacts and tasks appear automatically.{{/}}</p>
+          </li>
+        </ol>
+        <p class="it-note">{{de}}Muss die IT Ihres Unternehmens Ondura erst freigeben, zeigt Microsoft das bei der Anmeldung an. Für Ihre IT gibt es die <a href="https://github.com/Ondura-Suite/Ondura-Core/blob/main/docs/admin.md">Admin-Anleitung</a>.{{en}}If your company's IT has to approve Ondura first, Microsoft tells you during sign-in. Point them to the <a href="https://github.com/Ondura-Suite/Ondura-Core/blob/main/docs/admin.md">admin guide</a>.{{/}}</p>
+      </div>
+    </section>
+  </main>
+
+{{> footer}}
+</body>
+</html>

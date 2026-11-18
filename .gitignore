@@ -1,5 +1,4 @@
-# Synced from Ondura-Core at deploy time (scripts/sync-core.sh)
-site/assets/screens/
-site/assets/brand/
-site/release.json
+# Build output: scripts/build.py renders src/ into site/,
+# scripts/sync-core.sh adds screenshots, icons and release.json from Ondura-Core.
+site/
 .core/
