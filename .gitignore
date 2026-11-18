@@ -1,0 +1,5 @@
+# Synced from Ondura-Core at deploy time (scripts/sync-core.sh)
+site/assets/screens/
+site/assets/brand/
+site/release.json
+.core/
