@@ -22,7 +22,7 @@ rm -f "$screens"/*.png
 cp "$CORE_DIR"/docs/screenshots/*.png "$screens"/
 
 # App icons as shipped with the app.
-for icon in ondura mail text sheets slides; do
+for icon in ondura mail text sheets slides pdf; do
   cp "$CORE_DIR/apps/ondura/public/$icon.svg" "$brand/$icon.svg"
 done
 

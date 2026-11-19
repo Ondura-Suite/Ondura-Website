@@ -23,6 +23,7 @@
   --text: #2f57c6;
   --sheets: #0f723c;
   --slides: #b4391a;
+  --pdf: #a1283e;
 
   --radius-window: 14px;
   --radius-control: 8px;
@@ -546,3 +547,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .more { margin-top: 16px; font-weight: 560; }
 .split__head .more { font-size: 1rem; }
 .feature p + p { margin-top: 12px; }
+
+.feature-note { color: var(--ink-soft); font-size: 0.9375rem; padding-top: 4px; }
+.wide--pdf { margin-top: clamp(48px, 7vw, 80px); }
+.wide--pdf img { box-shadow: 0 0 0 1px rgb(20 27 61 / 0.08), 0 24px 48px -24px rgb(161 40 62 / 0.35); }

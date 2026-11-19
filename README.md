@@ -27,7 +27,7 @@ Screenshots, app icons and release information are **not** stored in this reposi
 | What | Source in Ondura-Core | Lands in |
 | --- | --- | --- |
 | Screenshots | `docs/screenshots/*.png` | `site/assets/screens/` |
-| App icons | `apps/ondura/public/{ondura,mail,text,sheets,slides}.svg` | `site/assets/brand/` |
+| App icons | `apps/ondura/public/{ondura,mail,text,sheets,slides,pdf}.svg` | `site/assets/brand/` |
 | Latest release (version, date, download links) | GitHub Releases API | `site/release.json` |
 
 The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs [`scripts/sync-core.sh`](scripts/sync-core.sh) and publishes `site/` to GitHub Pages:
