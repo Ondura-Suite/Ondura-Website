@@ -16,6 +16,8 @@
       version: (v, date) => `Version ${v}${date ? ` vom ${date}` : ""}`,
       downloadVersion: (v) => `Version ${v} herunterladen`,
       locale: "de-DE",
+      enlarge: "Bild vergrößern",
+      close: "Schließen",
     },
     en: {
       inOndura: (name) => `${name} in Ondura`,
@@ -23,6 +25,8 @@
       version: (v, date) => `Version ${v}${date ? `, released ${date}` : ""}`,
       downloadVersion: (v) => `Download version ${v}`,
       locale: "en-GB",
+      enlarge: "Enlarge image",
+      close: "Close",
     },
   };
   const T = STRINGS[LANG];
@@ -151,6 +155,49 @@
     });
   }
 
+  // ---------- Image viewer ----------
+  // Screenshots outside the tour are small; a click shows them full size.
+  function initViewer() {
+    const images = document.querySelectorAll(".trio img, .pair img, .wide img, .download__setup img");
+    if (!images.length || typeof HTMLDialogElement === "undefined") return;
+
+    const dialog = document.createElement("dialog");
+    dialog.className = "viewer";
+    dialog.innerHTML =
+      `<button class="viewer__close" type="button" aria-label="${T.close}">×</button>` +
+      `<figure class="viewer__figure"><img alt=""><figcaption></figcaption></figure>`;
+    document.body.appendChild(dialog);
+    const big = dialog.querySelector("img");
+    const caption = dialog.querySelector("figcaption");
+    let opener = null;
+
+    function open(img) {
+      opener = img;
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      const fc = img.closest("figure")?.querySelector("figcaption");
+      caption.textContent = fc ? fc.textContent : "";
+      caption.hidden = !fc;
+      dialog.showModal();
+    }
+
+    images.forEach((img) => {
+      img.classList.add("zoomable");
+      img.tabIndex = 0;
+      img.setAttribute("role", "button");
+      img.setAttribute("aria-label", `${T.enlarge}: ${img.alt}`);
+      img.addEventListener("click", () => open(img));
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(img); }
+      });
+    });
+
+    // Any click inside the dialog closes it; the image is for looking only.
+    dialog.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("close", () => { if (opener) opener.focus(); });
+  }
+
   document.querySelectorAll("[data-tour]").forEach(initTour);
+  initViewer();
   initRelease();
 })();
