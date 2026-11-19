@@ -2,9 +2,9 @@
 <html lang="{{lang}}" data-base="{{base}}">
 <head>
   <title>{{de}}Ondura – Office-Suite für Windows, macOS und Linux{{en}}Ondura – Office suite for Windows, macOS and Linux{{/}}</title>
-  <meta name="description" content="{{de}}Ondura ist ein komplettes Office für Windows, macOS und Linux: E-Mail mit Kalender, Kontakten und Aufgaben, dazu Text, Tabellen, Präsentation und PDF. Kostenlos und mit offenem Quellcode.{{en}}Ondura is a complete office suite for Windows, macOS and Linux: e-mail with calendar, contacts and tasks, plus Text, Sheets, Slides and PDF. Free, with open source code.{{/}}">
+  <meta name="description" content="{{de}}Ondura ist ein komplettes Office für Windows, macOS und Linux: E-Mail mit Kalender, Kontakten und Aufgaben, dazu Text, Tabellen, Präsentation, PDF, Notizen, Planer, Diagramme und Formulare. Kostenlos und mit offenem Quellcode.{{en}}Ondura is a complete office suite for Windows, macOS and Linux: e-mail with calendar, contacts and tasks, plus Text, Sheets, Slides, PDF, Notes, Planner, Diagrams and Forms. Free, with open source code.{{/}}">
   <meta property="og:title" content="{{de}}Ondura – Office-Suite für Windows, macOS und Linux{{en}}Ondura – Office suite for Windows, macOS and Linux{{/}}">
-  <meta property="og:description" content="{{de}}E-Mail, Kalender, Kontakte, Aufgaben, Text, Tabellen, Präsentation und PDF. Kostenlos und mit offenem Quellcode.{{en}}E-mail, calendar, contacts, tasks, Text, Sheets, Slides and PDF. Free, with open source code.{{/}}">
+  <meta property="og:description" content="{{de}}E-Mail mit Kalender, Text, Tabellen, Präsentation, PDF, Notizen, Planer, Diagramme und Formulare. Kostenlos und mit offenem Quellcode.{{en}}E-mail with calendar, Text, Sheets, Slides, PDF, Notes, Planner, Diagrams and Forms. Free, with open source code.{{/}}">
   <meta property="og:image" content="https://ondura.mirranet.de/assets/screens/mail-light.png">
   <meta property="og:url" content="{{url:{{lang}}}}">
   <link rel="canonical" href="{{url:{{lang}}}}">
@@ -18,7 +18,7 @@
       <div class="wrap">
         <div class="hero__text">
           <h1>{{de}}Die Office-Suite für Windows, macOS und&nbsp;Linux.{{en}}The office suite for Windows, macOS and&nbsp;Linux.{{/}}</h1>
-          <p class="hero__lede">{{de}}Ondura ist ein komplettes Office für Ihren Rechner: E-Mail mit Kalender, Kontakten und Aufgaben, dazu Text, Tabellen, Präsentation und eine App für PDFs. Die Oberfläche ist aufgeräumt und vertraut, Dokumente im .docx-, .xlsx- und .pptx-Format öffnen Sie einfach, OpenDocument-Dateien auch. Ondura ist kostenlos, und der Quellcode ist offen.{{en}}Ondura is a complete office suite for your computer: e-mail with calendar, contacts and tasks, plus Text, Sheets, Slides and an app for PDFs. The interface is clean and familiar, .docx, .xlsx and .pptx files just open, and so do OpenDocument files. Ondura is free, and its source code is open.{{/}}</p>
+          <p class="hero__lede">{{de}}Ondura ist ein komplettes Office für Ihren Rechner: E-Mail mit Kalender, Kontakten und Aufgaben, dazu Text, Tabellen und Präsentation. Für PDFs, Notizen, Pläne, Diagramme und Umfragen gibt es jeweils eine eigene App. Die Oberfläche ist aufgeräumt und vertraut, Dokumente im .docx-, .xlsx- und .pptx-Format öffnen Sie einfach, OpenDocument-Dateien auch. Ondura ist kostenlos, und der Quellcode ist offen.{{en}}Ondura is a complete office suite for your computer: e-mail with calendar, contacts and tasks, plus Text, Sheets and Slides. PDFs, notes, plans, diagrams and surveys each get an app of their own. The interface is clean and familiar, .docx, .xlsx and .pptx files just open, and so do OpenDocument files. Ondura is free, and its source code is open.{{/}}</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#download" data-version-label>{{de}}Ondura herunterladen{{en}}Download Ondura{{/}}</a>
             <a class="btn btn--ghost" href="https://github.com/Ondura-Suite/Ondura-Core">{{de}}Quellcode auf GitHub{{en}}Source code on GitHub{{/}}</a>
@@ -52,6 +52,18 @@
               </button>
               <button role="tab" aria-selected="false" tabindex="-1" data-shot="pdf" data-caption="{{de}}Ondura PDF, zum Lesen, Ausfüllen und Unterschreiben.{{en}}Ondura PDF, for reading, filling in and signing.{{/}}">
                 <img src="{{base}}assets/brand/pdf.svg" alt="" width="20" height="20">PDF
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="notes" data-caption="{{de}}Ondura Notizen, für Gedanken, Protokolle und To-dos.{{en}}Ondura Notes, for ideas, minutes and to-dos.{{/}}">
+                <img src="{{base}}assets/brand/notes.svg" alt="" width="20" height="20">{{de}}Notizen{{en}}Notes{{/}}
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="planner" data-caption="{{de}}Ondura Planer, damit im Team jeder weiß, was ansteht.{{en}}Ondura Planner, so everyone on the team knows what's next.{{/}}">
+                <img src="{{base}}assets/brand/planner.svg" alt="" width="20" height="20">{{de}}Planer{{en}}Planner{{/}}
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="diagram" data-caption="{{de}}Ondura Diagramme, für Abläufe, Organigramme und Netzwerkpläne.{{en}}Ondura Diagrams, for processes, org charts and network plans.{{/}}">
+                <img src="{{base}}assets/brand/diagram.svg" alt="" width="20" height="20">{{de}}Diagramme{{en}}Diagrams{{/}}
+              </button>
+              <button role="tab" aria-selected="false" tabindex="-1" data-shot="forms" data-caption="{{de}}Ondura Formulare, für Umfragen und Anmeldungen.{{en}}Ondura Forms, for surveys and sign-ups.{{/}}">
+                <img src="{{base}}assets/brand/forms.svg" alt="" width="20" height="20">{{de}}Formulare{{en}}Forms{{/}}
               </button>
             </div>
           </div>
@@ -147,7 +159,7 @@
             <div><dt>{{de}}Vorlagen zum Start{{en}}Templates to start with{{/}}</dt><dd>{{de}}Beim Öffnen sehen Sie Vorlagen wie Brief, Lebenslauf oder Rechnung und Ihre letzten Dateien.{{en}}When an app opens, you see templates like a letter, a CV or an invoice, along with your recent files.{{/}}</dd></div>
             <div><dt>OneDrive {{de}}und{{en}}and{{/}} SharePoint</dt><dd>{{de}}Dateien aus der Cloud öffnen und speichern Sie direkt. Dort speichert Ondura nebenbei automatisch.{{en}}Open and save files in the cloud directly. Ondura saves them automatically as you go.{{/}}</dd></div>
             <div><dt>{{de}}Nichts geht verloren{{en}}Nothing gets lost{{/}}</dt><dd>{{de}}Stürzt doch einmal etwas ab, holt Ondura Ihre Arbeit beim nächsten Start zurück.{{en}}If something does crash, Ondura brings your work back the next time it starts.{{/}}</dd></div>
-            <div><dt>PDF</dt><dd>{{de}}Jedes Dokument lässt sich als PDF speichern.{{en}}Every document can be saved as a PDF.{{/}}</dd></div>
+            <div><dt>{{de}}PDF und Drucken{{en}}PDF and printing{{/}}</dt><dd>{{de}}Jedes Dokument lässt sich als PDF speichern. Beim Drucken zeigt eine eigene Vorschau genau, was aufs Papier kommt, ohne Datum oder Webadresse am Rand.{{en}}Every document can be saved as a PDF. When you print, a preview shows exactly what ends up on paper, without a date or web address in the margins.{{/}}</dd></div>
             <div><dt>{{de}}Barrierefreiheit{{en}}Accessibility{{/}}</dt><dd>{{de}}Die Prüfung zeigt, wo zum Beispiel Alternativtexte fehlen, und behebt vieles mit einem Klick.{{en}}The checker shows where alt text is missing, for example, and fixes a lot of it with one click.{{/}}</dd></div>
             <div><dt>{{de}}Makros, aber sicher{{en}}Macros, safely{{/}}</dt><dd>{{de}}Makros werden nie in Dokumenten gespeichert. Eine fremde Datei kann bei Ihnen also keinen Code ausführen.{{en}}Macros are never stored in documents, so a file someone sends you can't run code on your computer.{{/}}</dd></div>
           </dl>
@@ -177,13 +189,21 @@
         <div class="split__head">
           <img class="app-icon" src="{{base}}assets/brand/pdf.svg" alt="" width="56" height="56">
           <h2>Ondura PDF</h2>
-          <p>{{de}}PDFs anschauen, ausfüllen, unterschreiben und neu sortieren, ohne dafür ein weiteres Programm zu brauchen.{{en}}Read, fill in, sign and rearrange PDFs, without needing another program for it.{{/}}</p>
+          <p>{{de}}PDFs anschauen, ausfüllen, unterschreiben, ändern und vergleichen, ohne dafür ein weiteres Programm zu brauchen.{{en}}Read, fill in, sign, edit and compare PDFs, without needing another program for it.{{/}}</p>
           <p class="more"><a href="https://github.com/Ondura-Suite/Ondura-Core#ondura-pdf">{{de}}Alle Funktionen im Überblick{{en}}See every feature{{/}}</a></p>
         </div>
         <div class="split__body">
           <div class="feature">
             <h3>{{de}}Lesen und kommentieren{{en}}Read and comment{{/}}</h3>
             <p>{{de}}Mit Seitenvorschau, Suche und Zoom. Sie markieren Textstellen, schreiben Notizen dazu oder zeichnen frei, und Formulare füllen Sie direkt aus. Alles wird als ganz normale PDF-Anmerkung gespeichert, die auch jedes andere PDF-Programm anzeigt.{{en}}With page thumbnails, search and zoom. You can highlight text, add notes or draw freehand, and fill in forms right there. Everything is saved as ordinary PDF annotations that any other PDF reader shows too.{{/}}</p>
+          </div>
+          <div class="feature">
+            <h3>{{de}}Text ändern und umwandeln{{en}}Edit and convert{{/}}</h3>
+            <p>{{de}}Einen Tippfehler im PDF korrigieren Sie direkt: Zeile anklicken, neuen Text schreiben. Eingescannte Seiten macht die Texterkennung durchsuchbar, und zwar offline auf Ihrem Rechner. Wollen Sie ein PDF richtig weiterbearbeiten, wandelt Ondura es in ein .docx-Dokument um und öffnet es in Ondura Text.{{en}}Fix a typo in a PDF right there: click the line and type the new text. Text recognition makes scanned pages searchable, offline on your own computer. And if you want to really rework a PDF, Ondura turns it into a .docx document and opens it in Ondura Text.{{/}}</p>
+          </div>
+          <div class="feature">
+            <h3>{{de}}Zwei Fassungen vergleichen{{en}}Compare two versions{{/}}</h3>
+            <p>{{de}}Ondura legt beide Versionen nebeneinander und markiert jedes gelöschte, neue und geänderte Wort. Eine Liste daneben zeigt alle Änderungen auf einen Blick.{{en}}Ondura puts both versions side by side and marks every removed, added and changed word. A list next to them shows all the changes at a glance.{{/}}</p>
           </div>
           <div class="feature">
             <h3>{{de}}Seiten sortieren{{en}}Rearrange pages{{/}}</h3>
@@ -197,14 +217,47 @@
             <h3>{{de}}Schwärzen und schützen{{en}}Redact and protect{{/}}</h3>
             <p>{{de}}Beim Schwärzen ist der Text darunter wirklich weg und nicht nur überdeckt. Ein Passwort schützt das Dokument mit AES-256, und Sie legen fest, ob gedruckt, kopiert oder bearbeitet werden darf.{{en}}When you redact something, the text underneath is really gone, not just covered up. A password protects the document with AES-256, and you decide whether it may be printed, copied or edited.{{/}}</p>
           </div>
-          <p class="feature-note">{{de}}Noch nicht dabei: vorhandenen Text direkt im PDF ändern, Texterkennung für eingescannte Seiten und das Umwandeln in ein .docx-Dokument.{{en}}Not there yet: editing existing text in place, text recognition for scanned pages and converting a PDF to a .docx document.{{/}}</p>
         </div>
       </div>
-      <div class="wrap">
-        <figure class="wide wide--pdf">
+      <div class="wrap pair">
+        <figure>
           <img src="{{base}}assets/screens/pdf.png" width="1440" height="900" loading="lazy" alt="{{de}}Ein Angebot in Ondura PDF mit Seitenvorschau und Unterschrift{{en}}An offer in Ondura PDF with page thumbnails and a signature{{/}}">
           <figcaption>{{de}}Ein Angebot, geprüft und unterschrieben{{en}}An offer, checked and signed{{/}}</figcaption>
         </figure>
+        <figure>
+          <img src="{{base}}assets/screens/pdf-compare.png" width="1440" height="900" loading="lazy" alt="{{de}}Zwei Fassungen eines PDFs im Vergleich{{en}}Two versions of a PDF compared{{/}}">
+          <figcaption>{{de}}Was hat sich zwischen den Fassungen geändert?{{en}}What changed between the two versions?{{/}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="more" class="section section--mist">
+      <div class="wrap">
+        <h2 class="section__title">{{de}}Notizen, Planer, Diagramme, Formulare{{en}}Notes, Planner, Diagrams, Forms{{/}}</h2>
+        <p class="section__intro">{{de}}Vier Apps für alles, was neben Briefen und Tabellen sonst so anfällt. Sie kommen mit den Office-Apps automatisch mit.{{en}}Four apps for everything else that comes up besides letters and spreadsheets. They come along with the office apps automatically.{{/}}</p>
+
+        <div class="extras">
+          <article class="extra extra--notes">
+            <img class="extra__shot" src="{{base}}assets/screens/notes.png" width="1440" height="900" loading="lazy" alt="{{de}}Ein Notizbuch in Ondura Notizen{{en}}A notebook in Ondura Notes{{/}}">
+            <div class="extra__head"><img class="app-icon" src="{{base}}assets/brand/notes.svg" alt="" width="40" height="40"><h3>{{de}}Ondura Notizen{{en}}Ondura Notes{{/}}</h3></div>
+            <p>{{de}}Notizbücher mit Abschnitten und Seiten, für Besprechungen, Ideen und alles, was man schnell festhalten will. To-dos zum Abhaken, Markierungen wie „wichtig“ oder „Idee“ und eine Suche über das ganze Notizbuch. Ihre Notizbücher liegen auf Ihrem Rechner oder in OneNote.{{en}}Notebooks with sections and pages, for meetings, ideas and anything you want to jot down quickly. To-dos you can tick off, tags like "important" or "idea", and search across the whole notebook. Your notebooks live on your computer or in OneNote.{{/}}</p>
+          </article>
+          <article class="extra extra--planner">
+            <img class="extra__shot" src="{{base}}assets/screens/planner.png" width="1440" height="900" loading="lazy" alt="{{de}}Ein Plan mit Aufgabenkarten in Ondura Planer{{en}}A plan with task cards in Ondura Planner{{/}}">
+            <div class="extra__head"><img class="app-icon" src="{{base}}assets/brand/planner.svg" alt="" width="40" height="40"><h3>{{de}}Ondura Planer{{en}}Ondura Planner{{/}}</h3></div>
+            <p>{{de}}Pläne mit Spalten und Aufgabenkarten, die Sie per Drag&nbsp;&amp;&nbsp;Drop verschieben. Jede Karte bekommt ein Fälligkeitsdatum, Zuständige und eine Checkliste. Wer lieber eine Liste, einen Monatskalender oder Diagramme sieht, schaltet einfach um. Gespeichert wird auf Ihrem Rechner oder in Microsoft Planner.{{en}}Plans with columns and task cards you move around by drag&nbsp;&amp;&nbsp;drop. Each card gets a due date, assignees and a checklist. If you'd rather see a list, a monthly calendar or charts, just switch views. Plans are saved on your computer or in Microsoft Planner.{{/}}</p>
+          </article>
+          <article class="extra extra--diagram">
+            <img class="extra__shot" src="{{base}}assets/screens/diagram.png" width="1440" height="900" loading="lazy" alt="{{de}}Ein Flussdiagramm in Ondura Diagramme{{en}}A flowchart in Ondura Diagrams{{/}}">
+            <div class="extra__head"><img class="app-icon" src="{{base}}assets/brand/diagram.svg" alt="" width="40" height="40"><h3>{{de}}Ondura Diagramme{{en}}Ondura Diagrams{{/}}</h3></div>
+            <p>{{de}}Flussdiagramme, Organigramme und Netzwerkpläne. Formen ziehen Sie auf die Fläche und verbinden sie über die blauen Pfeile, die Linien wandern beim Verschieben mit. Gespeichert wird im draw.io-Format, so lassen sich die Diagramme auch in diagrams.net öffnen. Export als PDF, PNG oder SVG.{{en}}Flowcharts, org charts and network plans. Drag shapes onto the canvas and connect them with the blue arrows; the lines follow along when you move things. Diagrams are saved in draw.io format, so they open in diagrams.net too. Export as PDF, PNG or SVG.{{/}}</p>
+          </article>
+          <article class="extra extra--forms">
+            <img class="extra__shot" src="{{base}}assets/screens/forms.png" width="1440" height="900" loading="lazy" alt="{{de}}Die Auswertung einer Umfrage in Ondura Formulare{{en}}Survey results in Ondura Forms{{/}}">
+            <div class="extra__head"><img class="app-icon" src="{{base}}assets/brand/forms.svg" alt="" width="40" height="40"><h3>{{de}}Ondura Formulare{{en}}Ondura Forms{{/}}</h3></div>
+            <p>{{de}}Umfragen, Anmeldungen und Abstimmungen, ganz ohne eigenen Server. Sie verschicken das Formular als ausfüllbares PDF oder als Webformular, die Antworten kommen per Mail zurück, und Ondura sammelt sie selbst ein. Die Auswertung zeigt ein Diagramm pro Frage oder alles als .xlsx-Tabelle.{{en}}Surveys, sign-ups and polls, without a server of your own. Send the form as a fillable PDF or as a web form; the answers come back by e-mail and Ondura collects them by itself. The results show a chart for each question, or everything as an .xlsx table.{{/}}</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -226,7 +279,7 @@
             </tbody>
           </table>
         </div>
-        <p class="table-note">{{de}}Dokumente öffnen Sie aus OneDrive, OneDrive for Business, SharePoint oder einfach von Ihrer Festplatte.{{en}}Documents open from OneDrive, OneDrive for Business, SharePoint or simply from your own drive.{{/}}</p>
+        <p class="table-note">{{de}}Dokumente öffnen Sie aus OneDrive, OneDrive for Business, SharePoint oder einfach von Ihrer Festplatte. Notizbücher synchronisiert Ondura mit OneNote, Pläne mit Microsoft Planner (Geschäfts- oder Schulkonto). Beides geht auch ganz ohne Konto.{{en}}Documents open from OneDrive, OneDrive for Business, SharePoint or simply from your own drive. Notebooks sync with OneNote, plans with Microsoft Planner (work or school accounts). Both also work without any account.{{/}}</p>
 
         <div class="data-note">
           <h3>{{de}}Wo Ihre Daten liegen{{en}}Where your data lives{{/}}</h3>
@@ -266,7 +319,7 @@
         </div>
         <div class="download__setup">
           <img src="{{base}}assets/screens/setup.png" width="640" height="520" loading="lazy" alt="{{de}}Ondura-Setup mit Auswahl zwischen Ondura Mail und den Office-Apps{{en}}Ondura setup with a choice between Ondura Mail and the office apps{{/}}">
-          <p>{{de}}Unter Windows fragt das Setup, ob Sie nur Ondura Mail möchten, nur die Office-Apps oder beides. Auf dem Mac ziehen Sie Ondura einfach in den Programme-Ordner.{{en}}On Windows, the setup asks whether you want just Ondura Mail, just the office apps, or both. On a Mac, you simply drag Ondura into your Applications folder.{{/}}</p>
+          <p>{{de}}Unter Windows fragt das Setup, ob Sie nur Ondura Mail möchten, nur die Office-Apps (von Text bis Formulare) oder beides. Auf dem Mac ziehen Sie Ondura einfach in den Programme-Ordner.{{en}}On Windows, the setup asks whether you want just Ondura Mail, just the office apps (everything from Text to Forms), or both. On a Mac, you simply drag Ondura into your Applications folder.{{/}}</p>
           <p>{{de}}Um Updates müssen Sie sich nicht kümmern. Ondura lädt sie im Hintergrund, und nach dem nächsten Neustart ist die neue Version da.{{en}}You don't have to think about updates. Ondura downloads them in the background, and after the next restart the new version is there.{{/}}</p>
           <p>{{de}}Ondura spricht Deutsch, Englisch und Französisch und startet in der Sprache Ihres Systems.{{en}}Ondura speaks German, English and French, and starts in your system's language.{{/}}</p>
         </div>
