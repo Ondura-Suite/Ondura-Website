@@ -10,18 +10,19 @@
 }
 
 :root {
-  --ink: #17184a;
-  --ink-soft: #4a4c78;
-  --indigo: #4f54d4;
-  --indigo-deep: #3a3eb3;
-  --mist: #f4f5fd;
-  --line: #e0e2f2;
+  /* Taken from the app icons (apps/ondura/public/*.svg in Ondura-Core). */
+  --ink: #141b3d;
+  --ink-soft: #4b5274;
+  --brand: #3f5bcb;
+  --brand-deep: #304bb4;
+  --mist: #f3f5fa;
+  --line: #e1e5f0;
   --white: #ffffff;
-  --night: #191a52;
+  --night: #172457;
 
-  --text: #2563eb;
-  --sheets: #16a34a;
-  --slides: #ea580c;
+  --text: #2f57c6;
+  --sheets: #0f723c;
+  --slides: #b4391a;
 
   --radius-window: 14px;
   --radius-control: 8px;
@@ -46,11 +47,11 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 
-a { color: var(--indigo-deep); text-underline-offset: 0.18em; }
-a:hover { color: var(--indigo); }
+a { color: var(--brand-deep); text-underline-offset: 0.18em; }
+a:hover { color: var(--brand); }
 
 :focus-visible {
-  outline: 3px solid var(--indigo);
+  outline: 3px solid var(--brand);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -120,10 +121,10 @@ p { margin: 0; }
 .nav a:hover { color: var(--ink); background: var(--mist); }
 .nav .nav__cta {
   color: var(--white);
-  background: var(--indigo);
+  background: var(--brand);
   margin-left: 8px;
 }
-.nav .nav__cta:hover { background: var(--indigo-deep); color: var(--white); }
+.nav .nav__cta:hover { background: var(--brand-deep); color: var(--white); }
 
 @media (max-width: 760px) {
   .nav a:not(.nav__cta) { display: none; }
@@ -151,7 +152,7 @@ p { margin: 0; }
 .lang a[aria-current="true"] {
   color: var(--ink);
   background: var(--white);
-  box-shadow: 0 1px 2px rgb(23 24 74 / 0.12), 0 0 0 1px rgb(79 84 212 / 0.16);
+  box-shadow: 0 1px 2px rgb(20 27 61 / 0.12), 0 0 0 1px rgb(63 91 203 / 0.16);
 }
 
 /* ---------- Buttons ---------- */
@@ -168,32 +169,31 @@ p { margin: 0; }
   text-decoration: none;
   white-space: nowrap;
 }
-.btn--primary { background: var(--indigo); color: var(--white); box-shadow: 0 6px 18px -8px rgb(79 84 212 / 0.8); }
-.btn--primary:hover { background: var(--indigo-deep); color: var(--white); }
+.btn--primary { background: var(--brand); color: var(--white); box-shadow: 0 6px 18px -8px rgb(63 91 203 / 0.8); }
+.btn--primary:hover { background: var(--brand-deep); color: var(--white); }
 .btn--ghost { color: var(--ink); background: rgb(255 255 255 / 0.7); border: 1px solid var(--line); }
-.btn--ghost:hover { color: var(--ink); background: var(--white); border-color: #c9cceb; }
+.btn--ghost:hover { color: var(--ink); background: var(--white); border-color: #c8cfe6; }
 .btn--light { background: var(--white); color: var(--night); min-width: 13rem; }
-.btn--light:hover { background: #e7e8ff; color: var(--night); }
+.btn--light:hover { background: #e6ebfb; color: var(--night); }
 
 /* ---------- Hero ---------- */
 
-/* The backdrop repeats the lavender-to-cyan wash of the app window itself,
-   so the screenshots sit in the same light they were taken in. */
+/* A calm, cool backdrop in the tone of the app's own window chrome,
+   with one soft wash of the brand blue behind the screenshot. */
 .hero {
   position: relative;
   padding-top: clamp(40px, 7vw, 88px);
   padding-bottom: clamp(48px, 7vw, 96px);
   background:
-    radial-gradient(60% 55% at 8% 0%, rgb(240 171 252 / 0.38), transparent 70%),
-    radial-gradient(55% 60% at 100% 35%, rgb(34 211 238 / 0.28), transparent 70%),
-    linear-gradient(180deg, #eceefe 0%, #f6f7ff 60%, var(--white) 100%);
+    radial-gradient(70% 50% at 85% 70%, rgb(90 117 225 / 0.16), transparent 70%),
+    linear-gradient(180deg, #eef1f8 0%, #f6f7fb 55%, var(--white) 100%);
   overflow: hidden;
 }
 
 .hero__text { max-width: 56rem; }
 
 .hero h1 {
-  font-size: clamp(2.75rem, 8.2vw, 6.25rem);
+  font-size: clamp(2.75rem, 7.4vw, 5.75rem);
   font-weight: 640;
   font-stretch: 76%;
   letter-spacing: -0.025em;
@@ -235,7 +235,7 @@ p { margin: 0; }
   padding: 4px;
   background: rgb(255 255 255 / 0.72);
   border: 1px solid rgb(255 255 255 / 0.9);
-  box-shadow: 0 1px 2px rgb(23 24 74 / 0.06), inset 0 0 0 1px rgb(224 226 242 / 0.6);
+  box-shadow: 0 1px 2px rgb(20 27 61 / 0.06), inset 0 0 0 1px rgb(224 226 242 / 0.6);
   border-radius: 12px;
 }
 
@@ -254,11 +254,11 @@ p { margin: 0; }
   cursor: pointer;
   white-space: nowrap;
 }
-.tour__tabs button:hover { color: var(--ink); background: rgb(79 84 212 / 0.07); }
+.tour__tabs button:hover { color: var(--ink); background: rgb(63 91 203 / 0.07); }
 .tour__tabs button[aria-selected="true"] {
   color: var(--ink);
   background: var(--white);
-  box-shadow: 0 1px 3px rgb(23 24 74 / 0.12), 0 0 0 1px rgb(79 84 212 / 0.18);
+  box-shadow: 0 1px 3px rgb(20 27 61 / 0.12), 0 0 0 1px rgb(63 91 203 / 0.18);
 }
 .tour__tabs img { width: 20px; height: 20px; }
 
@@ -276,9 +276,9 @@ p { margin: 0; }
   border-radius: var(--radius-window);
   border: 1px solid rgb(255 255 255 / 0.9);
   box-shadow:
-    0 0 0 1px rgb(23 24 74 / 0.06),
-    0 30px 60px -24px rgb(47 47 158 / 0.35),
-    0 12px 24px -12px rgb(23 24 74 / 0.18);
+    0 0 0 1px rgb(20 27 61 / 0.06),
+    0 30px 60px -24px rgb(48 75 180 / 0.35),
+    0 12px 24px -12px rgb(20 27 61 / 0.18);
   background: var(--mist);
   transition: opacity 180ms ease;
 }
@@ -333,7 +333,7 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
 .feature h3 { margin-bottom: 10px; }
 .feature p { color: var(--ink-soft); max-width: 40rem; }
 .feature ul { margin: 0; padding-left: 1.1em; color: var(--ink-soft); display: grid; gap: 8px; max-width: 40rem; }
-.feature li::marker { color: var(--indigo); }
+.feature li::marker { color: var(--brand); }
 
 @media (max-width: 860px) {
   .split { grid-template-columns: 1fr; }
@@ -350,10 +350,40 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
 .pair figure { margin: 0; }
 .pair img {
   border-radius: 10px;
-  box-shadow: 0 0 0 1px rgb(23 24 74 / 0.08), 0 18px 36px -20px rgb(47 47 158 / 0.35);
+  box-shadow: 0 0 0 1px rgb(20 27 61 / 0.08), 0 18px 36px -20px rgb(48 75 180 / 0.35);
 }
 .pair figcaption { margin-top: 12px; font-size: 0.9375rem; color: var(--ink-soft); }
 @media (max-width: 700px) { .pair { grid-template-columns: 1fr; } }
+
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(56px, 8vw, 96px);
+  align-items: start;
+}
+.trio figure, .wide { margin: 0; }
+.trio img, .wide img {
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgb(20 27 61 / 0.08), 0 18px 36px -20px rgb(48 75 180 / 0.35);
+}
+.trio img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; background: var(--mist); }
+.trio figcaption, .wide figcaption { margin-top: 12px; font-size: 0.9375rem; color: var(--ink-soft); }
+@media (max-width: 860px) { .trio { grid-template-columns: 1fr; } }
+
+.wide { margin-top: clamp(56px, 8vw, 88px); }
+.wide + .pair { margin-top: clamp(24px, 4vw, 40px); }
+
+.table-note { margin-top: 14px; color: var(--ink-soft); font-size: 0.9375rem; }
+
+.foot__legal {
+  flex-basis: 100%;
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: #6b7190;
+  max-width: 60rem;
+}
 
 /* Office apps */
 .apps {
@@ -406,22 +436,22 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
   width: 8px; height: 8px;
   margin-right: 8px;
   border-radius: 50%;
-  background: var(--indigo);
+  background: var(--brand);
   vertical-align: 0.1em;
 }
-.accounts td.n { color: #9a9cc0; }
+.accounts td.n { color: #9aa1bd; }
 
 .data-note {
   margin-top: clamp(56px, 8vw, 88px);
   max-width: 46rem;
   padding-left: 24px;
-  border-left: 3px solid var(--indigo);
+  border-left: 3px solid var(--brand);
 }
 .data-note p { margin-top: 10px; color: var(--ink-soft); }
 
 /* Download */
-.section--ink { background: var(--night); color: #e9eaff; }
-.section--ink a { color: #c7c9ff; }
+.section--ink { background: var(--night); color: #e8ecfb; }
+.section--ink a { color: #c3cdf7; }
 .section--ink a:hover { color: var(--white); }
 .section--ink .btn--light { color: var(--night); }
 
@@ -432,7 +462,7 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
   align-items: start;
 }
 .download__head h2 { color: var(--white); }
-.download__version { margin-top: 14px; color: #b9bbe8; font-size: 1.125rem; }
+.download__version { margin-top: 14px; color: #b6c0e6; font-size: 1.125rem; }
 
 .downloads { list-style: none; margin: 36px 0 0; padding: 0; }
 .downloads li {
@@ -445,15 +475,15 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
 }
 .downloads li:last-child { border-bottom: 1px solid rgb(255 255 255 / 0.14); }
 .downloads__os { font-weight: 560; color: var(--white); }
-.downloads__os small { display: block; font-weight: 450; color: #a7aadb; font-size: 0.875rem; }
+.downloads__os small { display: block; font-weight: 450; color: #a4aed6; font-size: 0.875rem; }
 .download__more { margin-top: 20px; }
 
 .download__setup img {
   border-radius: 12px;
   box-shadow: 0 24px 48px -20px rgb(0 0 0 / 0.55);
 }
-.download__setup p { margin-top: 20px; color: #c3c5ee; }
-.download__setup .download__lang { margin-top: 12px; color: var(--white); font-weight: 560; }
+.download__setup p { margin-top: 16px; color: #c4cceb; }
+.download__setup img + p { margin-top: 24px; }
 .download__setup strong { color: var(--white); font-weight: 600; }
 
 @media (max-width: 860px) {
@@ -481,7 +511,7 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
   width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--mist);
-  color: var(--indigo-deep);
+  color: var(--brand-deep);
   font-weight: 650;
   margin-bottom: 16px;
   box-shadow: inset 0 0 0 1px var(--line);
@@ -511,3 +541,4 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+.foot__legal a { font-size: inherit; text-decoration: underline; }

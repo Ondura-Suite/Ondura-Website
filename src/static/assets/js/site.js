@@ -90,7 +90,8 @@
 
   // ---------- Release links ----------
   const ASSET_PATTERNS = {
-    win: [/_x64_Setup\.exe$/i, /setup.*\.exe$/i, /\.exe$/i],
+    win: [/_x64_Setup\.exe$/i, /setup.*\.exe$/i, /^(?!.*silent).*\.exe$/i],
+    mac: [/\.dmg$/i],
     deb: [/\.deb$/i],
     rpm: [/\.rpm$/i],
     appimage: [/\.AppImage$/i],
