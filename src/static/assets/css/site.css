@@ -542,3 +542,7 @@ h3 { font-size: 1.125rem; font-weight: 620; letter-spacing: -0.005em; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .foot__legal a { font-size: inherit; text-decoration: underline; }
+
+.more { margin-top: 16px; font-weight: 560; }
+.split__head .more { font-size: 1rem; }
+.feature p + p { margin-top: 12px; }
