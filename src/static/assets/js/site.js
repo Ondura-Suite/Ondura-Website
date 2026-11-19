@@ -158,7 +158,7 @@
   // ---------- Image viewer ----------
   // Screenshots outside the tour are small; a click shows them full size.
   function initViewer() {
-    const images = document.querySelectorAll(".trio img, .pair img, .wide img, .download__setup img");
+    const images = document.querySelectorAll(".trio img, .pair img, .wide img, .extra__shot, .download__setup img");
     if (!images.length || typeof HTMLDialogElement === "undefined") return;
 
     const dialog = document.createElement("dialog");

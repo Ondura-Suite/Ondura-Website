@@ -24,6 +24,10 @@
   --sheets: #0f723c;
   --slides: #b4391a;
   --pdf: #a1283e;
+  --notes: #7a2ba3;
+  --planner: #0f6f6b;
+  --diagram: #4f52a6;
+  --forms: #a86d12;
 
   --radius-window: 14px;
   --radius-control: 8px;
@@ -594,3 +598,24 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 }
 .viewer__close:hover { background: rgb(255 255 255 / 0.26); }
 @media (max-width: 640px) { .viewer__close { top: -42px; } }
+
+/* Smaller apps: screenshot on top, text below */
+.extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 56px);
+  margin-top: clamp(40px, 6vw, 64px);
+}
+.extra__shot {
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgb(20 27 61 / 0.08), 0 18px 36px -20px var(--extra-shadow, rgb(48 75 180 / 0.35));
+}
+.extra--notes { --extra-shadow: rgb(122 43 163 / 0.35); }
+.extra--planner { --extra-shadow: rgb(15 111 107 / 0.35); }
+.extra--diagram { --extra-shadow: rgb(79 82 166 / 0.35); }
+.extra--forms { --extra-shadow: rgb(168 109 18 / 0.35); }
+.extra__head { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+.extra__head .app-icon { width: 40px; height: 40px; }
+.extra__head h3 { font-size: 1.3125rem; }
+.extra p { margin-top: 10px; color: var(--ink-soft); max-width: 36rem; }
+@media (max-width: 860px) { .extras { grid-template-columns: 1fr; } }
