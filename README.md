@@ -1,6 +1,6 @@
 # Ondura website
 
-Source of [ondura.mirranet.de](https://ondura.mirranet.de), the product page of the [Ondura](https://github.com/Ondura-Suite/Ondura-Core) office suite. Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser.
+Source of [ondura.mirranet.de](https://ondura.mirranet.de), the product page of the [Ondura](https://github.com/Ondura-Suite/Ondura-Core) office suite for Windows, macOS and Linux. Plain HTML, CSS and a little JavaScript, in English and German – no framework, no external requests from the visitor's browser.
 
 ## Languages
 
@@ -37,7 +37,7 @@ The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs
 - manually via *Actions › Deploy website › Run workflow*,
 - on a `repository_dispatch` event of type `ondura-core-updated` (optional, see below).
 
-The download buttons link straight to the matching release asset (`*_x64_Setup.exe`, `.deb`, `.rpm`, `.AppImage`). Without a published release they fall back to the releases page.
+The download buttons link straight to the matching release asset (`*_x64_Setup.exe`, `.dmg`, `.deb`, `.rpm`, `.AppImage`). Without a published release they fall back to the releases page.
 
 ## One-time setup
 
