@@ -29,6 +29,7 @@ Screenshots, app icons and release information are **not** stored in this reposi
 | Screenshots | `docs/screenshots/*.png` | `site/assets/screens/` |
 | App icons | `apps/ondura/public/{ondura,mail,text,sheets,slides,pdf,notes,planner,diagram,forms}.svg` | `site/assets/brand/` |
 | Latest release (version, date, download links) | GitHub Releases API | `site/release.json` |
+| Latest Android release (APK link) | Releases of [Ondura-Android](https://github.com/Ondura-Suite/Ondura-Android) | `site/release-android.json` |
 
 The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs [`scripts/sync-core.sh`](scripts/sync-core.sh) and publishes `site/` to GitHub Pages:
 
@@ -37,7 +38,7 @@ The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs
 - manually via *Actions › Deploy website › Run workflow*,
 - on a `repository_dispatch` event of type `ondura-core-updated` (optional, see below).
 
-The download buttons link straight to the matching release asset (`*_x64_Setup.exe`, `.dmg`, `.deb`, `.rpm`, `.AppImage`). Without a published release they fall back to the releases page.
+The download buttons link straight to the matching release asset (`*_x64_Setup.exe`, `.dmg`, `.deb`, `.rpm`, `.AppImage`). Without a published release they fall back to the releases page. The Android row and the Android section say *coming soon* until Ondura-Android publishes a release with an `.apk`; after the next deploy they link to it.
 
 ## One-time setup
 

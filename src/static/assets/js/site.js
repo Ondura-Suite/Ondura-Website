@@ -17,6 +17,8 @@
       downloadVersion: (v) => `Version ${v} herunterladen`,
       locale: "de-DE",
       enlarge: "Bild vergrößern",
+      apk: "APK herunterladen",
+      available: (v) => `Version ${v} verfügbar`,
       close: "Schließen",
     },
     en: {
@@ -26,6 +28,8 @@
       downloadVersion: (v) => `Download version ${v}`,
       locale: "en-GB",
       enlarge: "Enlarge image",
+      apk: "Download APK",
+      available: (v) => `Version ${v} available`,
       close: "Close",
     },
   };
@@ -120,6 +124,35 @@
     return `${(bytes / 1048576).toLocaleString(T.locale, { maximumFractionDigits: 0 })} MB`;
   }
 
+  // Ondura Mail for Android: the page says "coming soon" until the Android
+  // repository publishes a release with an APK.
+  async function initAndroid() {
+    const link = document.querySelector("[data-android-asset]");
+    const badge = document.querySelector("[data-android-badge]");
+    if (!link && !badge) return;
+    let release = null;
+    try {
+      const res = await fetch(`${BASE}release-android.json`, { cache: "no-cache" });
+      if (res.ok) release = await res.json();
+    } catch (_) { return; }
+    const apk = release && release.tag && Array.isArray(release.assets)
+      ? release.assets.find((a) => /\.apk$/i.test(a.name) && !/debug/i.test(a.name))
+      : null;
+    if (!apk) return;
+    const version = release.tag.replace(/^v/i, "");
+    if (link) {
+      link.href = apk.url;
+      link.textContent = T.apk;
+      link.classList.remove("btn--soon");
+      const size = formatSize(apk.size);
+      if (size) link.title = `${apk.name} (${size})`;
+    }
+    if (badge) {
+      badge.textContent = T.available(version);
+      badge.classList.add("badge--live");
+    }
+  }
+
   async function initRelease() {
     const status = document.querySelector("[data-release-status]");
     if (!status && !document.querySelector("[data-asset], [data-version-label]")) return;
@@ -200,4 +233,5 @@
   document.querySelectorAll("[data-tour]").forEach(initTour);
   initViewer();
   initRelease();
+  initAndroid();
 })();
