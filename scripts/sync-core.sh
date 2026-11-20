@@ -34,21 +34,26 @@ if [[ -n "${GITHUB_TOKEN:-}" ]]; then
   auth=(-H "Authorization: Bearer $GITHUB_TOKEN")
 fi
 
-releases="$(curl -fsSL "${auth[@]}" \
-  -H "Accept: application/vnd.github+json" \
-  "https://api.github.com/repos/$REPO/releases?per_page=20" || echo '[]')"
+# write_release <owner/repo> <output file>
+write_release() {
+  local releases
+  releases="$(curl -fsSL "${auth[@]}" \
+    -H "Accept: application/vnd.github+json" \
+    "https://api.github.com/repos/$1/releases?per_page=20" || echo '[]')"
+  echo "$releases" | jq '
+    [ .[] | select(.draft | not) ] | first //
+    null |
+    if . == null then { tag: null } else {
+      tag: .tag_name,
+      name: .name,
+      prerelease: .prerelease,
+      published_at: .published_at,
+      html_url: .html_url,
+      assets: [ .assets[] | { name, size, url: .browser_download_url } ]
+    } end
+  ' > "$2"
+}
 
-echo "$releases" | jq '
-  [ .[] | select(.draft | not) ] | first //
-  null |
-  if . == null then { tag: null } else {
-    tag: .tag_name,
-    name: .name,
-    prerelease: .prerelease,
-    published_at: .published_at,
-    html_url: .html_url,
-    assets: [ .assets[] | { name, size, url: .browser_download_url } ]
-  } end
-' > "$SITE_DIR/release.json"
+write_release "$REPO" "$SITE_DIR/release.json"
 
 echo "Synced $(ls "$screens" | wc -l) screenshots, icons and release $(jq -r '.tag // "none"' "$SITE_DIR/release.json")."
