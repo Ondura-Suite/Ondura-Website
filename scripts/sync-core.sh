@@ -2,7 +2,10 @@
 # Pulls everything the website shows about the app from Ondura-Core into
 # the site folder: screenshots, app icons and the latest release metadata.
 #
-# Usage: scripts/sync-core.sh <path-to-Ondura-Core-checkout> [site-dir]
+# Usage: scripts/sync-core.sh <Ondura-Core checkout> [site-dir] [Ondura-Android checkout]
+#
+# With an Ondura-Android checkout, its phone screenshots are copied to
+# assets/screens/android/.
 #
 # GITHUB_TOKEN is optional; without it the GitHub API rate limit for
 # anonymous requests applies (fine for local use).
@@ -11,6 +14,7 @@ set -euo pipefail
 
 CORE_DIR="${1:?path to an Ondura-Core checkout required}"
 SITE_DIR="${2:-$(dirname "$0")/../site}"
+ANDROID_DIR="${3:-}"
 REPO="${ONDURA_CORE_REPO:-Ondura-Suite/Ondura-Core}"
 
 screens="$SITE_DIR/assets/screens"
@@ -20,6 +24,13 @@ mkdir -p "$screens" "$brand"
 # Screenshots: docs/screenshots is the single source of truth.
 rm -f "$screens"/*.png
 cp "$CORE_DIR"/docs/screenshots/*.png "$screens"/
+
+# Phone screenshots of Ondura Mail for Android.
+if [[ -n "$ANDROID_DIR" && -d "$ANDROID_DIR/docs/screenshots" ]]; then
+  mkdir -p "$screens/android"
+  rm -f "$screens/android"/*.png
+  cp "$ANDROID_DIR"/docs/screenshots/*.png "$screens/android"/
+fi
 
 # App icons as shipped with the app.
 for icon in ondura mail text sheets slides pdf notes planner diagram forms; do

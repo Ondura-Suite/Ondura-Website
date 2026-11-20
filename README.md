@@ -27,6 +27,7 @@ Screenshots, app icons and release information are **not** stored in this reposi
 | What | Source in Ondura-Core | Lands in |
 | --- | --- | --- |
 | Screenshots | `docs/screenshots/*.png` | `site/assets/screens/` |
+| Android phone screenshots | `docs/screenshots/*.png` in [Ondura-Android](https://github.com/Ondura-Suite/Ondura-Android) | `site/assets/screens/android/` |
 | App icons | `apps/ondura/public/{ondura,mail,text,sheets,slides,pdf,notes,planner,diagram,forms}.svg` | `site/assets/brand/` |
 | Latest release (version, date, download links) | GitHub Releases API | `site/release.json` |
 | Latest Android release (APK link) | Releases of [Ondura-Android](https://github.com/Ondura-Suite/Ondura-Android) | `site/release-android.json` |
@@ -71,7 +72,8 @@ The three-hourly schedule is enough for most cases. To update the site the momen
 ```sh
 git clone --depth 1 https://github.com/Ondura-Suite/Ondura-Core.git .core
 python3 scripts/build.py
-scripts/sync-core.sh .core site      # needs curl and jq
+git clone --depth 1 https://github.com/Ondura-Suite/Ondura-Android.git .android
+scripts/sync-core.sh .core site .android   # needs curl and jq
 python3 -m http.server -d site 8080
 ```
 

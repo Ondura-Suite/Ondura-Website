@@ -667,3 +667,31 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .btn--soon { background: transparent; color: #c4cceb; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.28); }
 .btn--soon:hover { background: rgb(255 255 255 / 0.08); color: var(--white); }
 .foot__legal strong { color: var(--ink-soft); font-weight: 600; }
+
+/* Android phone screenshots */
+.phones {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 28px);
+  margin-top: clamp(48px, 7vw, 80px);
+}
+.phones figure { margin: 0; }
+.phones img {
+  border-radius: 22px;
+  border: 6px solid #1a2140;
+  background: #1a2140;
+  box-shadow: 0 22px 40px -22px rgb(20 27 61 / 0.55);
+}
+.phones figcaption { margin-top: 12px; text-align: center; font-size: 0.9375rem; color: var(--ink-soft); }
+@media (max-width: 1000px) { .phones { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 520px) {
+  .phones {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+  .phones figure { scroll-snap-align: center; }
+}
