@@ -619,3 +619,34 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .extra__head h3 { font-size: 1.3125rem; }
 .extra p { margin-top: 10px; color: var(--ink-soft); max-width: 36rem; }
 @media (max-width: 860px) { .extras { grid-template-columns: 1fr; } }
+
+/* First-run warning help in the download band */
+.first-run {
+  margin-top: 28px;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.04);
+}
+.first-run summary {
+  padding: 14px 18px;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+}
+.first-run summary::marker { color: #9fb0f0; }
+.first-run[open] summary { border-bottom: 1px solid rgb(255 255 255 / 0.12); }
+.first-run > p, .first-run dl { margin: 14px 18px 0; color: #c4cceb; }
+.first-run dl { margin-bottom: 18px; }
+.first-run dt { margin-top: 14px; font-weight: 600; color: var(--white); }
+.first-run dd { margin: 4px 0 0; }
+.first-run strong { color: var(--white); font-weight: 600; }
+.first-run code {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgb(0 0 0 / 0.3);
+  color: #e8ecfb;
+  font-size: 0.875rem;
+  word-break: break-all;
+}

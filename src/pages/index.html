@@ -315,6 +315,17 @@
               <a class="btn btn--light" data-asset="appimage" href="https://github.com/Ondura-Suite/Ondura-Core/releases/latest">{{de}}AppImage herunterladen{{en}}Download AppImage{{/}}</a>
             </li>
           </ul>
+          <details class="first-run">
+            <summary>{{de}}Warnung beim ersten Start?{{en}}A warning on first start?{{/}}</summary>
+            <p>{{de}}Ondura ist noch nicht mit einem kostenpflichtigen Zertifikat von Microsoft oder Apple signiert. Deshalb warnt Ihr System bei der ersten Installation vor einem unbekannten Herausgeber. Das passiert nur einmal, Updates laufen danach ohne Warnung.{{en}}Ondura isn't signed with a paid certificate from Microsoft or Apple yet, so your system warns about an unknown publisher the first time you install it. This only happens once; updates install without the warning.{{/}}</p>
+            <dl>
+              <dt>Windows</dt>
+              <dd>{{de}}Bei „Der Computer wurde durch Windows geschützt“ auf <strong>Weitere Informationen</strong> klicken, dann auf <strong>Trotzdem ausführen</strong>.{{en}}When you see “Windows protected your PC”, click <strong>More info</strong>, then <strong>Run anyway</strong>.{{/}}</dd>
+              <dt>macOS</dt>
+              <dd>{{de}}Die Meldung schließen, dann <em>Systemeinstellungen&nbsp;›&nbsp;Datenschutz &amp; Sicherheit</em> öffnen und neben Ondura auf <strong>Dennoch öffnen</strong> klicken. Bis macOS&nbsp;14 geht es auch so: Rechtsklick auf Ondura im Ordner <em>Programme</em> und <strong>Öffnen</strong> wählen.{{en}}Close the message, open <em>System Settings&nbsp;›&nbsp;Privacy &amp; Security</em> and click <strong>Open Anyway</strong> next to Ondura. On macOS&nbsp;14 and older you can also right-click Ondura in <em>Applications</em> and choose <strong>Open</strong>.{{/}}</dd>
+              <dd>{{de}}Sagt macOS, Ondura sei „beschädigt“, hilft dieser Befehl im Terminal:{{en}}If macOS says Ondura is “damaged”, run this in Terminal:{{/}} <code>xattr -dr com.apple.quarantine /Applications/Ondura.app</code></dd>
+            </dl>
+          </details>
           <p class="download__more">{{de}}Sie wollen Ondura auf vielen Rechnern verteilen? Dafür gibt es eine stille Installation, mehr dazu in der <a href="https://github.com/Ondura-Suite/Ondura-Core/blob/main/docs/admin.md">Admin-Anleitung</a>. Ältere Versionen liegen <a href="https://github.com/Ondura-Suite/Ondura-Core/releases">auf GitHub</a>.{{en}}Rolling Ondura out to lots of computers? There's a silent installer for that; see the <a href="https://github.com/Ondura-Suite/Ondura-Core/blob/main/docs/admin.md">admin guide</a>. Older versions are <a href="https://github.com/Ondura-Suite/Ondura-Core/releases">on GitHub</a>.{{/}}</p>
         </div>
         <div class="download__setup">
