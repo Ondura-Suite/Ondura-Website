@@ -695,3 +695,5 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   }
   .phones figure { scroll-snap-align: center; }
 }
+.android__cta { margin-top: 24px; }
+.android__cta + .more { margin-top: 14px; }
