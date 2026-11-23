@@ -17,6 +17,7 @@
       downloadVersion: (v) => `Version ${v} herunterladen`,
       locale: "de-DE",
       enlarge: "Bild vergrößern",
+      serverVersion: (v, date) => `Version ${v}${date ? ` vom ${date}` : ""}, für Debian 12, Ubuntu 22.04 und neuer`,
       close: "Schließen",
     },
     en: {
@@ -26,6 +27,7 @@
       downloadVersion: (v) => `Download version ${v}`,
       locale: "en-GB",
       enlarge: "Enlarge image",
+      serverVersion: (v, date) => `Version ${v}${date ? `, released ${date}` : ""}, for Debian 12, Ubuntu 22.04 and newer`,
       close: "Close",
     },
   };
@@ -120,6 +122,36 @@
     return `${(bytes / 1048576).toLocaleString(T.locale, { maximumFractionDigits: 0 })} MB`;
   }
 
+  // Ondura Server packages from the latest release of Ondura-Server.
+  async function initServer() {
+    const links = document.querySelectorAll("[data-server-asset]");
+    if (!links.length) return;
+    let release = null;
+    try {
+      const res = await fetch(`${BASE}release-server.json`, { cache: "no-cache" });
+      if (res.ok) release = await res.json();
+    } catch (_) { return; }
+    if (!release || !release.tag || !Array.isArray(release.assets)) return;
+    const patterns = {
+      "deb-amd64": /_amd64\.deb$/i,
+      "deb-arm64": /_arm64\.deb$/i,
+      tar: /x86_64-linux\.tar\.gz$/i,
+    };
+    links.forEach((link) => {
+      const asset = release.assets.find((a) => patterns[link.dataset.serverAsset]?.test(a.name));
+      if (asset) {
+        link.href = asset.url;
+        const size = formatSize(asset.size);
+        link.title = size ? `${asset.name} (${size})` : asset.name;
+      }
+    });
+    const status = document.querySelector("[data-server-status]");
+    if (status) {
+      const version = release.tag.replace(/^v/i, "");
+      status.textContent = T.serverVersion(version, release.published_at ? formatDate(release.published_at) : "");
+    }
+  }
+
   async function initRelease() {
     const status = document.querySelector("[data-release-status]");
     if (!status && !document.querySelector("[data-asset], [data-version-label]")) return;
@@ -200,4 +232,5 @@
   document.querySelectorAll("[data-tour]").forEach(initTour);
   initViewer();
   initRelease();
+  initServer();
 })();

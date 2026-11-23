@@ -29,6 +29,8 @@ Screenshots, app icons and release information are **not** stored in this reposi
 | Screenshots | `docs/screenshots/*.png` | `site/assets/screens/` |
 | App icons | `apps/ondura/public/{ondura,mail,text,sheets,slides,pdf,notes,planner,diagram,forms}.svg` | `site/assets/brand/` |
 | Latest release (version, date, download links) | GitHub Releases API | `site/release.json` |
+| Ondura Server screenshots | `docs/screenshots/*.png` in [Ondura-Server](https://github.com/Ondura-Suite/Ondura-Server) | `site/assets/screens/server/` |
+| Latest Ondura Server release (package links) | Releases of Ondura-Server | `site/release-server.json` |
 
 The workflow [`deploy.yml`](.github/workflows/deploy.yml) builds the pages, runs [`scripts/sync-core.sh`](scripts/sync-core.sh) and publishes `site/` to GitHub Pages:
 
@@ -70,7 +72,8 @@ The three-hourly schedule is enough for most cases. To update the site the momen
 ```sh
 git clone --depth 1 https://github.com/Ondura-Suite/Ondura-Core.git .core
 python3 scripts/build.py
-scripts/sync-core.sh .core site      # needs curl and jq
+git clone --depth 1 https://github.com/Ondura-Suite/Ondura-Server.git .server
+scripts/sync-core.sh .core site .server   # needs curl and jq
 python3 -m http.server -d site 8080
 ```
 

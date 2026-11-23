@@ -2,3 +2,4 @@
 # scripts/sync-core.sh adds screenshots, icons and release.json from Ondura-Core.
 site/
 .core/
+.server/

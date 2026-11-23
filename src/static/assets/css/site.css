@@ -651,3 +651,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   word-break: break-all;
 }
 
+
+
+/* Ondura Server */
+.server-dl { margin-top: 24px; }
+.server-dl__version { font-size: 0.9375rem; color: var(--ink-soft); }
+.server-dl__buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.server-dl__buttons .btn { min-height: 40px; padding: 0 14px; font-size: 0.9375rem; }
+.server-dl + .more { margin-top: 16px; }
+#server .pair img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; background: var(--mist); }

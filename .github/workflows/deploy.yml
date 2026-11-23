@@ -36,6 +36,14 @@ jobs:
             docs/screenshots
             apps/ondura/public
 
+      - name: Check out Ondura-Server
+        uses: actions/checkout@v5
+        with:
+          repository: Ondura-Suite/Ondura-Server
+          path: .server
+          sparse-checkout: |
+            docs/screenshots
+
       - name: Build pages (English and German)
         run: python3 scripts/build.py site
 
@@ -44,7 +52,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           chmod +x scripts/sync-core.sh
-          scripts/sync-core.sh .core site
+          scripts/sync-core.sh .core site .server
 
       - uses: actions/configure-pages@v5
 

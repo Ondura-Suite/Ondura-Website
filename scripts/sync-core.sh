@@ -2,7 +2,9 @@
 # Pulls everything the website shows about the app from Ondura-Core into
 # the site folder: screenshots, app icons and the latest release metadata.
 #
-# Usage: scripts/sync-core.sh <path-to-Ondura-Core-checkout> [site-dir]
+# Usage: scripts/sync-core.sh <Ondura-Core checkout> [site-dir] [Ondura-Server checkout]
+#
+# With an Ondura-Server checkout, its screenshots go to assets/screens/server/.
 #
 # GITHUB_TOKEN is optional; without it the GitHub API rate limit for
 # anonymous requests applies (fine for local use).
@@ -11,6 +13,7 @@ set -euo pipefail
 
 CORE_DIR="${1:?path to an Ondura-Core checkout required}"
 SITE_DIR="${2:-$(dirname "$0")/../site}"
+SERVER_DIR="${3:-}"
 REPO="${ONDURA_CORE_REPO:-Ondura-Suite/Ondura-Core}"
 
 screens="$SITE_DIR/assets/screens"
@@ -20,6 +23,13 @@ mkdir -p "$screens" "$brand"
 # Screenshots: docs/screenshots is the single source of truth.
 rm -f "$screens"/*.png
 cp "$CORE_DIR"/docs/screenshots/*.png "$screens"/
+
+# Screenshots of the Ondura Server Admin Center and webmail.
+if [[ -n "$SERVER_DIR" && -d "$SERVER_DIR/docs/screenshots" ]]; then
+  mkdir -p "$screens/server"
+  rm -f "$screens/server"/*.png
+  cp "$SERVER_DIR"/docs/screenshots/*.png "$screens/server"/
+fi
 
 # App icons as shipped with the app.
 for icon in ondura mail text sheets slides pdf notes planner diagram forms; do
@@ -55,5 +65,6 @@ write_release() {
 }
 
 write_release "$REPO" "$SITE_DIR/release.json"
+write_release "${ONDURA_SERVER_REPO:-Ondura-Suite/Ondura-Server}" "$SITE_DIR/release-server.json"
 
-echo "Synced $(ls "$screens" | wc -l) screenshots, icons and release $(jq -r '.tag // "none"' "$SITE_DIR/release.json")."
+echo "Synced $(ls "$screens" | wc -l) screenshots, icons, release $(jq -r '.tag // "none"' "$SITE_DIR/release.json") and server release $(jq -r '.tag // "none"' "$SITE_DIR/release-server.json")."
